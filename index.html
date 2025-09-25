@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meganathan Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{transition:background 0.5s,color 0.5s;}
+
+    /* Navbar */
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:#0d6efd;color:white;position:sticky;top:0;z-index:1000;}
+    nav .logo{font-size:28px;font-weight:700;letter-spacing:2px;}
+    nav ul{display:flex;list-style:none;}
+    nav ul li{margin-left:30px;}
+    nav ul li a{color:white;text-decoration:none;font-weight:500;transition:color .3s;}
+    nav ul li a:hover,nav ul li a.active{color:#ffc107;}
+    #darkToggle{font-size:18px;background:none;border:none;cursor:pointer;color:white;transition:transform .3s;}
+    #darkToggle:hover{transform:rotate(20deg);}
+
+    /* Hero Section */
+    .hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:url('https://source.unsplash.com/1600x900/?ai,data') center/cover no-repeat;color:white;position:relative;}
+    .hero::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0.7));z-index:1;}
+    .hero *{position:relative;z-index:2;}
+
+    .profile-pic{width:160px;height:160px;border-radius:50%;border:5px solid #ffc107;margin-bottom:20px;box-shadow:0 8px 20px rgba(0,0,0,0.5);transition:transform .3s;object-fit:cover;}
+    .profile-pic:hover{transform:scale(1.05);}
+
+    h1{font-size:48px;margin-bottom:15px;animation:fadeIn 2s ease forwards;}
+    .highlight{color:#ffc107;}
+
+    .typing{font-size:22px;margin-bottom:25px;min-height:28px;color:#f1f1f1;}
+    .btn{padding:15px 30px;font-size:18px;background:#ffc107;color:#0d6efd;text-decoration:none;border-radius:50px;font-weight:600;transition:transform .3s,background .3s;}
+    .btn:hover{transform:translateY(-5px);background:#ffca2c;}
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
+
+    /* Footer */
+    footer{text-align:center;padding:20px;background:#0d6efd;color:white;}
+
+    /* Dark Mode */
+    body.dark{background:#121212;color:#f5f5f5;}
+    body.dark nav{background:#1f1f1f;color:#f5f5f5;}
+    body.dark nav ul li a{color:#f5f5f5;}
+    body.dark nav ul li a:hover,body.dark nav ul li a.active{color:#ffc107;}
+    body.dark footer{background:#1f1f1f;color:#f5f5f5;}
+
+    /* Responsive */
+    @media(max-width:768px){
+      nav{flex-direction:column;}
+      nav ul{flex-direction:column;margin-top:10px;}
+      nav ul li{margin-left:0;margin-bottom:10px;}
+      h1{font-size:32px;}
+      .typing{font-size:16px;}
+      .profile-pic{width:120px;height:120px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h2 class="logo">MEGANATHAN</h2>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button id="darkToggle">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Use your local profile image -->
+    <img src="images/profile.jpg" 
+         onerror="this.onerror=null;this.src='https://via.placeholder.com/160x160.png?text=Profile';" 
+         alt="Profile Picture" class="profile-pic">
+
+    <h1>Hello, I'm <span class="highlight">Meganathan</span></h1>
+    <p class="typing" id="typing"></p>
+    <a href="projects.html" class="btn">🚀 Explore My Projects</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Meganathan. B.Tech AI & Data Science | Java • Python • R • Scala • TensorFlow • Spark</p>
+  </footer>
+
+  <script>
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById('darkToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      toggleBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+
+    // Typing Effect
+    const roles = [
+      "AI & Data Science Student",
+      "Machine Learning Engineer",
+      "Full-Stack Developer",
+      "Big Data Enthusiast"
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let typingElement = document.getElementById("typing");
+    let typingSpeed = 100;
+
+    function typeRole(){
+      if(charIndex < roles[roleIndex].length){
+        typingElement.textContent += roles[roleIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeRole, typingSpeed);
+      } else {
+        setTimeout(eraseRole, 2000);
+      }
+    }
+
+    function eraseRole(){
+      if(charIndex > 0){
+        typingElement.textContent = roles[roleIndex].substring(0, charIndex-1);
+        charIndex--;
+        setTimeout(eraseRole, 50);
+      } else {
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typeRole, typingSpeed);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", typeRole);
+  </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Meganathan Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+    body{background:#f0f4f8;color:#333;line-height:1.6;}
+
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:#0d6efd;color:white;position:sticky;top:0;z-index:1000;}
+    nav h1{font-size:28px;font-weight:700;}
+    nav ul{display:flex;list-style:none;}
+    nav ul li{margin-left:30px;}
+    nav ul li a{text-decoration:none;color:white;font-weight:500;transition:color .3s;}
+    nav ul li a.active,nav ul li a:hover{color:#ffc107;}
+
+    .about{display:flex;flex-direction:column;align-items:center;padding:80px 20px;background:linear-gradient(to right,#f0f8ff,#ffffff);}
+    .about h2{font-size:36px;color:#0d6efd;margin-bottom:50px;text-align:center;}
+
+    .about-container{display:flex;max-width:1000px;gap:50px;flex-wrap:wrap;justify-content:center;align-items:flex-start;}
+
+    .profile-img{width:250px;border-radius:20px;border:5px solid #0d6efd;box-shadow:0 10px 25px rgba(0,0,0,0.1);animation:float 4s ease-in-out infinite;transition:transform 0.3s;}
+    .profile-img:hover{transform:scale(1.05);}
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+
+    .about-text{max-width:600px;}
+    .about-text p{margin-bottom:20px;font-size:18px;}
+
+    .skills{margin-top:30px;}
+    .skill{margin-bottom:20px;}
+    .skill-name{margin-bottom:5px;font-weight:600;}
+    .skill-bar{width:100%;height:15px;background:#e0e0e0;border-radius:10px;overflow:hidden;}
+    .skill-bar-inner{height:100%;background:#0d6efd;width:0%;border-radius:10px;transition:width 2s ease;}
+
+    .timeline{position:relative;margin-top:50px;}
+    .timeline::before{content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);width:4px;height:100%;background:#0d6efd;}
+    .timeline-item{position:relative;width:50%;padding:20px 40px;background:white;border-radius:10px;margin:20px 0;box-shadow:0 8px 20px rgba(0,0,0,0.1);transition:transform 0.3s;}
+    .timeline-item:hover{transform:translateY(-10px);}
+    .timeline-item.left{left:0;}
+    .timeline-item.right{left:50%;}
+    .timeline-item::before{content:'';position:absolute;top:20px;width:20px;height:20px;background:#ffc107;border-radius:50%;border:4px solid #0d6efd;}
+    .timeline-item.left::before{right:-10px;}
+    .timeline-item.right::before{left:-10px;}
+
+    @media(max-width:900px){
+      .about-container{flex-direction:column;align-items:center;}
+      .profile-img{width:200px;}
+      .timeline-item{width:90%;left:0!important;}
+      .timeline::before{left:10px;}
+      .timeline-item::before{left:-25px!important;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Meganathan</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="images/profile.jpg" alt="Profile Image" class="profile-img">
+      <div class="about-text">
+        <p>Hello! 👋 I’m <strong>Meganathan R</strong>, a B.Tech student in <strong>Artificial Intelligence and Data Science</strong> at Karpagam College of Engineering (Anna University, batch 2026). I focus on AI, data engineering, and scalable systems that solve real-world problems.</p>
+
+        <p>I work with <strong>Java</strong>, <strong>Python</strong>, <strong>R</strong>, and <strong>Scala</strong>, using frameworks like <strong>Pandas, Scikit-learn, NumPy, Seaborn, Matplotlib, TensorFlow, AutoML (H2O, TPOT), Streamlit, Gradio, Hadoop, and Apache Spark</strong>. I’m also comfortable with tools such as <strong>Git, Docker, Jenkins, Tableau, and Power BI</strong>. My development playgrounds include Jupyter Notebook, Visual Studio Code, and Google Colab.</p>
+
+        <div class="skills">
+          <div class="skill">
+            <div class="skill-name">Java / Python / R / Scala</div>
+            <div class="skill-bar"><div class="skill-bar-inner" data-width="90%"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Machine Learning & Deep Learning</div>
+            <div class="skill-bar"><div class="skill-bar-inner" data-width="85%"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Big Data (Hadoop, Spark)</div>
+            <div class="skill-bar"><div class="skill-bar-inner" data-width="80%"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Data Visualization (Tableau / Power BI)</div>
+            <div class="skill-bar"><div class="skill-bar-inner" data-width="75%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item left">
+        <h3>Jan 2025 – Present</h3>
+        <p>🚀 Dimensionality Reduction Project – implemented a novel k-means clustering approach that improved model accuracy by 0.73% and reduced training time through effective feature selection.</p>
+      </div>
+      <div class="timeline-item right">
+        <h3>Dec 2024 – Jan 2025</h3>
+        <p>🛣️ Vehicle Routing Optimization – used genetic algorithms and custom fitness functions to cut travel distance and time by 20% in simulated delivery scenarios.</p>
+      </div>
+      <div class="timeline-item left">
+        <h3>Feb 2024 – May 2024</h3>
+        <p>👁️ Driver Fatigue Detection – built a real-time detection system using CNN and Haar Cascade classifiers to improve road safety through timely fatigue alerts.</p>
+      </div>
+      <div class="timeline-item right">
+        <h3>Nov 2025 – Sep 2025</h3>
+        <p>🩺 MediScan Disease Prediction – created a multi-disease prediction system (Diabetes, Heart Disease, Breast Cancer) using Random Forest and ANN with an interactive Gradio interface for real-time predictions.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:40px;text-align:center;">
+      <a href="https://leetcode.com/u/Meganathan2004/" target="_blank">Leetcode</a> |
+      <a href="https://github.com/meganathansriram" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/meganathan-r-18797b279/" target="_blank">LinkedIn</a>
+    </p>
+  </section>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.skill-bar-inner').forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        setTimeout(()=>{ bar.style.width = width; }, 500);
+      });
+    });
+  </script>
+</body>
+</html>

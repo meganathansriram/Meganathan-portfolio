@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Meganathan Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+    body{background:#f0f4f8;color:#333;line-height:1.6;}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:#0d6efd;color:white;position:sticky;top:0;}
+    nav h1{font-size:28px;font-weight:700;}
+    nav ul{display:flex;list-style:none;}
+    nav ul li{margin-left:30px;}
+    nav ul li a{text-decoration:none;color:white;font-weight:500;transition:color .3s;}
+    nav ul li a.active,nav ul li a:hover{color:#ffc107;}
+    .projects{max-width:1100px;margin:60px auto;padding:0 20px;}
+    .projects h2{text-align:center;font-size:36px;color:#0d6efd;margin-bottom:40px;}
+    .project-card{background:white;padding:20px;border-radius:15px;margin-bottom:25px;box-shadow:0 8px 20px rgba(0,0,0,0.1);transition:transform .3s;}
+    .project-card:hover{transform:translateY(-8px);}
+    .project-title{font-size:22px;font-weight:700;color:#0d6efd;margin-bottom:10px;}
+    .project-desc{font-size:16px;}
+    @media(max-width:700px){nav{padding:20px;}nav ul li{margin-left:15px;}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>Meganathan</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="projects">
+    <h2>Key Projects</h2>
+
+    <div class="project-card">
+      <div class="project-title">Dimensionality Reduction Project</div>
+      <p class="project-desc">
+        Designed and implemented a novel k-means clustering approach for dimensionality reduction.
+        Improved activity recognition accuracy by 0.73% using a Gaussian Naive Bayes model and cut training
+        time by 0.017 seconds through efficient feature selection.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Vehicle Routing Optimization with Genetic Algorithms</div>
+      <p class="project-desc">
+        Developed an optimized solution for the vehicle routing problem using DEAP-based genetic algorithms.
+        Created custom fitness functions to minimize travel distance and time, resulting in a 20% improvement
+        in solution quality. Simulated delivery scenarios with 25 unique customer locations on a 100×100 grid.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Driver Fatigue Detection System</div>
+      <p class="project-desc">
+        Built a real-time driver fatigue detection system using CNN and Haar Cascade classifiers.
+        Leveraged in-vehicle camera data to detect facial expressions and eye movements associated with fatigue,
+        improving road safety by delivering timely alerts.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">MediScan – Intelligent Disease Prediction</div>
+      <p class="project-desc">
+        Created a multi-disease prediction platform (Diabetes, Heart Disease, Breast Cancer) using
+        Random Forest and ANN models. Implemented automated preprocessing and feature scaling with an
+        interactive Gradio interface providing real-time predictions and confidence scores.
+      </p>
+    </div>
+
+  </section>
+
+</body>
+</html>

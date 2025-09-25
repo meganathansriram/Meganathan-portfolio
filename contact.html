@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Meganathan Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+    body{background:#f0f4f8;color:#333;line-height:1.6;}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:#0d6efd;color:white;}
+    nav h1{font-size:28px;font-weight:700;}
+    nav ul{display:flex;list-style:none;}
+    nav ul li{margin-left:30px;}
+    nav ul li a{text-decoration:none;color:white;font-weight:500;transition:color .3s;}
+    nav ul li a.active,nav ul li a:hover{color:#ffc107;}
+    .contact{padding:60px 20px;text-align:center;}
+    .contact h1{font-size:36px;color:#0d6efd;margin-bottom:30px;}
+    .contact-info{margin-bottom:30px;font-size:18px;}
+    .contact-info a{text-decoration:none;color:#0d6efd;font-weight:600;}
+    form{max-width:500px;margin:0 auto;background:white;padding:30px;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.1);}
+    form input,form textarea{width:100%;padding:12px;margin-bottom:15px;border:1px solid #ccc;border-radius:8px;font-size:16px;}
+    form button{width:100%;padding:12px;background:#0d6efd;color:white;font-size:18px;border:none;border-radius:8px;cursor:pointer;transition:.3s;}
+    form button:hover{background:#084298;}
+    #statusMessage{margin-top:15px;font-weight:600;}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Meganathan</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="contact">
+    <h1>Contact Me</h1>
+    <div class="contact-info">
+      <p>📧 Email: <a href="mailto:yourgmail@gmail.com">sriram21214g@gmail.com</a></p>
+      <p>📞 Phone: <a href="tel:+911234567890">+91 9360178382></p>
+    </div>
+
+    <form id="contactForm">
+      <input type="text" name="from_name" placeholder="Your Name" required>
+      <input type="email" name="from_email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="statusMessage"></p>
+  </section>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YOUR_PUBLIC_KEY"); // 🔑 Replace with your EmailJS public key
+    })();
+
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      emailjs.sendForm("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID", this)
+        .then(() => {
+          document.getElementById("statusMessage").innerText = "✅ Message sent successfully!";
+          document.getElementById("statusMessage").style.color = "green";
+          this.reset();
+        }, (err) => {
+          document.getElementById("statusMessage").innerText = "❌ Failed to send. Try again.";
+          document.getElementById("statusMessage").style.color = "red";
+        });
+    });
+  </script>
+</body>
+</html>
