@@ -67,13 +67,13 @@ Dark mode for better user experience
 
 📧 Contact Me
 
-Email: your-email@example.com
+Email: sriram21214g@gmail.com
 
-Phone: +91-XXXXXXXXXX
+Phone: +91-9360178382
 
-LinkedIn: linkedin.com/in/yourprofile
+LinkedIn:https://www.linkedin.com/in/meganathan-r-18797b279/
 
-GitHub: github.com/yourusername
+GitHub: https://github.com/meganathansriram
 
 ✨ License
 
